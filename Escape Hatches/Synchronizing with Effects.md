@@ -63,7 +63,7 @@ Unmount Component:
 No Cleanup:
 
 4 . Comment out the cleanup function in the useEffect. Type "abcde" quickly. Expect to see a sequence of logs (a, ab, abc, abcd, and abcde) after three seconds. Each Effect captures the text value from its corresponding render.
-
+### Example very easy
 Component unmount হলে এবং dependency change হলে আগে cleanup function run করে তারপর আবার effect run করবে।
 
 ধরেন এখানে postID=1
