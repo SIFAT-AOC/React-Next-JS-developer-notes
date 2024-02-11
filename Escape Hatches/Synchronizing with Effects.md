@@ -64,6 +64,12 @@ No Cleanup:
 
 4 . Comment out the cleanup function in the useEffect. Type "abcde" quickly. Expect to see a sequence of logs (a, ab, abc, abcd, and abcde) after three seconds. Each Effect captures the text value from its corresponding render.
 
+Component unmount হলে এবং dependency change হলে আগে cleanup function run করে তারপর আবার effect run করবে।
+
+ধরেন এখানে postID=1
+তাহলে আমার কোড অনুযায়ী post 1 এর সকল comments গুলা চলে আসার কথা। কিন্তূ post 1 এর promise resolved হয়ে আসার আগেই আপনার component unmount হয়ে গেলো অথবা আপনার postId 1 থেকে 2 হয়ে গেলো । 
+যদি unmount হয়ে যায় তাহলে আপনার এখন আর comments গুলা দরকার নেই । কিন্তূ আপনি still ডাটা গুলা নিয়ে আসতেছেন। এইটা ঠিক নয় । এই বিষয়টা solve করে Cleanup function। Component unmount হলে cleanup function run হবে ফলে ignore= true হবে তাহলে state এর মধ্যে আর ডাটা যাবে না ।
+
 ### Understanding React Effects
 
 - **Unlike events, Effects are caused by rendering itself rather than a particular interaction.**
