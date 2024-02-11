@@ -6,3 +6,9 @@
 5.You can move non-reactive logic from Effects into Effect Events.
 6.Only call Effect Events from inside Effects.
 7.Don’t pass Effect Events to other components or Hooks.
+
+
+### Effect Events are very limited in how you can use them:
+
+1 .Only call them from inside Effects. /
+2 .Never pass them to other components or Hooks.
